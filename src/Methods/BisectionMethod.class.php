@@ -2,12 +2,14 @@
 
 namespace Methods;
 
-class BisectionMethod
-{
+include "Method.class.php";
 
-	public function __construct()
-	{
+use Methods\Method;
 
+class BisectionMethod extends Method {
+
+	public function __construct($argv = NULL) {
+		$this->configure($argv);
 	}
 
 }

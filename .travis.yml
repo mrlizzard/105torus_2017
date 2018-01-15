@@ -1,4 +1,6 @@
 language: php
 group: stable
 os: linux
-script: make re
+script:
+  - make re
+  - ./105torus 0 0 0 0 0 0 0

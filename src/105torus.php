@@ -8,11 +8,14 @@
 ** 105torus project
 */
 
+include "src/Methods/BisectionMethod.class.php";
+
 use Methods\BisectionMethod;
 
-$obj = NULL;
+$method = NULL;
 $args = count($argv);
 
+// Check help flag and arguments number
 if ($args == 2 && $argv[1] == "-h") {
 	printf("USAGE:\n\t./105torus opt a0 a1 a2 a3 a4 n\n\n");
 	printf("DESCRIPTION:\n");
@@ -24,3 +27,38 @@ if ($args == 2 && $argv[1] == "-h") {
 	printf("Too much/less arguments. Only 7 arguments needed.\n");
 	exit(84);
 }
+
+// Check if all arguments is numeric (except the first)
+for ($loop = 1; $loop < 8; $loop++) { 
+	if (!is_numeric($argv[$loop])) {
+		printf("One of the arguments isn't a number.\n");
+		exit(84);
+	}
+}
+
+// Get the method to adopt
+switch ($argv[1]) {
+	case 0:
+		$method = new BisectionMethod($argv);
+		break;
+
+	case 1:
+		$method = NULL;
+		break;
+
+	case 2:
+		$method = NULL;
+		break;
+	
+	default:
+		$method = NULL;
+		break;
+}
+
+// Invalid method used
+if ($method == NULL) {
+	printf("Method must be between 0 and 2 (included)\n");
+	exit(84);
+}
+
+exit(0);
