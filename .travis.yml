@@ -4,3 +4,5 @@ os: linux
 script:
   - make re
   - ./105torus 0 0 0 0 0 0 0
+notifications:
+  email: false
