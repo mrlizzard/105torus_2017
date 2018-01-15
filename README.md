@@ -22,36 +22,13 @@ iteratives algorithms :
 > :bulb: Equations to be solved here will all have one and only one solution, in the **[0;1]** interval. This is the solution we are looking for. The initial value for Newton’s method will be 0.5, those for the 2 other
 methodes will be 0 and 1.
 
-> :bulb: Read man pages
+## Usage
 
-## Authorized functions
+`~/B-MAT-100> ./105torus opt a0 a1 a2 a3 a4 n`
 
-- opendir
-- readdir
-- closedir
-- getcwd
-- malloc
-- free
-- exit
-- chdir
-- fork
-- stat
-- lstat
-- fstat
-- getcwd
-- open
-- close
-- read
-- write
-- execve
-- access
-- isatty
-- wait
-- waitpid
-- wait3
-- wait4
-- signal
-- kill
-- getpid
-- strerror
-- perror
+- **opt:** number of the option:
+- - (1) - bisection method
+- - (2) - Newton's method 
+- - (3) - secant method
+- **a0, a1, a2, a3, a4:** coefficients of the equation 
+- **n:** precision (meaning the application of the polynomial to the solution should be smaller than 10^-n)
