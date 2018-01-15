@@ -27,8 +27,8 @@ methodes will be 0 and 1.
 `~/B-MAT-100> ./105torus opt a0 a1 a2 a3 a4 n`
 
 - **opt:** number of the option:
--- (1) - bisection method
--- (2) - Newton's method 
--- (3) - secant method
+  - (1) - bisection method
+  - (2) - Newton's method 
+  - (3) - secant method
 - **a0, a1, a2, a3, a4:** coefficients of the equation 
 - **n:** precision (meaning the application of the polynomial to the solution should be smaller than 10^-n)
