@@ -24,7 +24,9 @@ methodes will be 0 and 1.
 
 ## Usage
 
-``~/B-MAT-100> ./105torus opt a0 a1 a2 a3 a4 n``
+```
+~/B-MAT-100> ./105torus opt a0 a1 a2 a3 a4 n
+```
 
 - **opt:** number of the option:
   - (1) - bisection method
@@ -40,3 +42,45 @@ methodes will be 0 and 1.
 
 ## Examples
 
+```
+∼/B-MAT-100> ./105torus 1 -1 0 6 -5 1 6
+x = 0.5
+x = 0.75
+x = 0.625
+x = 0.5625
+x = 0.53125
+x = 0.515625
+x = 0.523438
+x = 0.519531
+x = 0.521484
+x = 0.522461
+x = 0.522949
+x = 0.522705
+x = 0.522827
+x = 0.522766
+x = 0.522736
+x = 0.522751
+x = 0.522743
+x = 0.522739
+x = 0.522741
+x = 0.522740
+```
+
+> :bulb: The maximum number of displayed decimals is the same as the precision (n)
+
+```
+∼/B-MAT-100> ./105torus 2 -1 0 6 -5 1 12
+x = 0.5
+x = 0.522727272727
+x = 0.522740003514
+x = 0.522740003526
+```
+
+```
+∼/B-MAT-100> ./105torus 3 -1 0 6 -5 1 8
+x = 0.5
+x = 0.52941176
+x = 0.52274853
+x = 0.52274000
+x = 0.52274000
+```
