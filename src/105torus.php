@@ -9,8 +9,12 @@
 */
 
 include "src/Methods/BisectionMethod.class.php";
+include "src/Methods/NewtonMethod.class.php";
+include "src/Methods/SecantMethod.class.php";
 
 use Methods\BisectionMethod;
+use Methods\NewtonMethod;
+use Methods\SecantMethod;
 
 $method = NULL;
 $args = count($argv);
@@ -43,11 +47,11 @@ switch ($argv[1]) {
 		break;
 
 	case 1:
-		$method = NULL;
+		$method = new NewtonMethod($argv);
 		break;
 
 	case 2:
-		$method = NULL;
+		$method = new SecantMethod($argv);
 		break;
 	
 	default:
