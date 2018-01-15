@@ -1,4 +1,4 @@
-# Torus (4th degree) - Mathematics of the donut
+# Torus (4th degree) - Mathematics of the donut [![Build Status](https://travis-ci.org/mrlizzard/105torus_2017.svg?branch=master)](https://travis-ci.org/mrlizzard/105torus_2017)
 
 - **Binary name:** 105torus
 - **Repository name:** 105torus_2017
