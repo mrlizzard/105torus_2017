@@ -8,7 +8,10 @@ use Methods\Method;
 
 /**
  ** NewtonMethod class
- ** @extends Method (abstract)
+ **
+ ** @author Cyril COLINET
+ ** @version 1.0
+ ** @since 1.0
  **/
 class NewtonMethod extends Method {
 

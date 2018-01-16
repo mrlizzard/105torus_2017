@@ -8,7 +8,10 @@ use Methods\Method;
 
 /**
  ** SecantMethod class
- ** @extends Method (abstract)
+ **
+ ** @author Cyril COLINET
+ ** @version 1.0
+ ** @since 1.0
  **/
 class SecantMethod extends Method {
 
