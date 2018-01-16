@@ -25,7 +25,7 @@ abstract class Method {
 			$this->equation['a' . $i] = $argv[$loop];
 
 		if (count($this->equation) != 5) {
-			printf("Error while setting equation array.%d\n", count($this->equation));
+			printf("Error while setting equation array.\n");
 			exit(84);
 		}
 
