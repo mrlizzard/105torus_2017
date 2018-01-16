@@ -4,6 +4,9 @@ namespace Methods;
 
 abstract class Method {
 
+	public $precision;
+	public $precision_pow10;
+
 	public $equation;
 	public $verbose;
 
@@ -20,6 +23,8 @@ abstract class Method {
 			exit(84);
 
 		$add = ($this->verbose ? 1 : 0);
+		$this->precision = $argv[7 + $add];
+		$this->precision_pow10 = pow(10, $this->precision);
 
 		for ($loop = 2 + $add, $i = 0; $loop < 7 + $add; $loop++, $i++)
 			$this->equation['a' . $i] = $argv[$loop];
