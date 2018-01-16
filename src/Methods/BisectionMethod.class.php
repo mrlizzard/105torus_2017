@@ -27,9 +27,11 @@ class BisectionMethod extends Method {
 	 **
 	 ** @param (array) $argv, default = NULL
 	 ** @param (boolean) $verbose
+	 ** @param (boolean) $disp_func
 	 **/
-	public function __construct($argv = NULL, $verbose) {
+	public function __construct($argv = NULL, $verbose, $disp_func) {
 		$this->verbose = $verbose;
+		$this->disp_func = $disp_func;
 
 		$this->configure($argv);
 	}
@@ -77,7 +79,7 @@ class BisectionMethod extends Method {
 			$round02 = round($this->point02 * $this->precision_pow10);
 
 			if ($round01 == $round02) {
-				if ($this->verbose)
+				if ($this->verbose || $this->disp_func)
 					printf("f(x): %.1e\n", $this->func_xm);
 				
 				exit(0);

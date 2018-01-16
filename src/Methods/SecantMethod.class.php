@@ -23,9 +23,11 @@ class SecantMethod extends Method {
 	 **
 	 ** @param (array) $argv, default = NULL
 	 ** @param (boolean) $verbose
+	 ** @param (boolean) $disp_func
 	 **/
-	public function __construct($argv = NULL, $verbose) {
+	public function __construct($argv = NULL, $verbose, $disp_func) {
 		$this->verbose = $verbose;
+		$this->disp_func = $disp_func;
 
 		$this->configure($argv);
 	}

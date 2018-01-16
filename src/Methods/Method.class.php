@@ -15,6 +15,7 @@ abstract class Method {
 	public $precision_pow10;
 
 	public $equation;
+	public $disp_func;
 	public $verbose;
 
 	/**
@@ -39,10 +40,10 @@ abstract class Method {
 	 ** @param (array) $argv, default = NULL
 	 **/
 	public function configure($argv = NULL) {
-		if ($argv == NULL || !is_bool($this->verbose))
+		if ($argv == NULL || !is_bool($this->verbose) || !is_bool($this->disp_func))
 			exit(84);
 
-		$add = ($this->verbose ? 1 : 0);
+		$add = ($this->verbose || $this->disp_func ? 1 : 0);
 		$this->precision = $argv[7 + $add];
 		$this->precision_pow10 = pow(10, $this->precision);
 

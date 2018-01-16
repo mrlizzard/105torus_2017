@@ -27,9 +27,11 @@ class NewtonMethod extends Method {
 	 **
 	 ** @param (array) $argv, default = NULL
 	 ** @param (boolean) $verbose
+	 ** @param (boolean) $disp_func
 	 **/
-	public function __construct($argv = NULL, $verbose) {
+	public function __construct($argv = NULL, $verbose, $disp_func) {
 		$this->verbose = $verbose;
+		$this->disp_func = $disp_func;
 
 		$this->configure($argv);
 	}
@@ -73,12 +75,12 @@ class NewtonMethod extends Method {
 			$this->point02 = $this->point01 - ($this->func_xn / $this->func_pxn);
 			$round01 = round($this->point01 * $this->precision_pow10);
 			$round02 = round($this->point02 * $this->precision_pow10);
-			
+
 			$this->calc_function("func_xn2", $this->point02, false);
 			printf("x = %." . $this->precision . "f\n", $this->point01);
 
 			if ($round01 == $round02) {
-				if ($this->verbose)
+				if ($this->verbose || $this->disp_func)
 					printf("f(x): %.1e\n", $this->func_xn2);
 
 				exit(0);
