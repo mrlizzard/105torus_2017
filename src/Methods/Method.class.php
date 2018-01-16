@@ -26,4 +26,6 @@ abstract class Method {
 
 	public abstract function calcul();
 
+	public abstract function display();
+
 }

@@ -65,4 +65,8 @@ if ($method == NULL) {
 	exit(84);
 }
 
+// Calculus and display method resolution
+$method->calcul();
+$method->display();
+
 exit(0);

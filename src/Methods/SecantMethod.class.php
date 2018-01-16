@@ -13,6 +13,10 @@ class SecantMethod extends Method {
 	}
 
 	public function calcul() {
+
+	}
+
+	public function display() {
 		
 	}
 

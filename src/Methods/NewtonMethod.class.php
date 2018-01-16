@@ -13,6 +13,10 @@ class NewtonMethod extends Method {
 	}
 
 	public function calcul() {
+
+	}
+
+	public function display() {
 		
 	}
 
