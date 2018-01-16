@@ -67,8 +67,22 @@ class SecantMethod extends Method {
 	 **/
 	public function display() {
 		for ($i = 0; $i < 250; $i++) {
+			$this->calc_function("func_point01", $this->point01);
+			$this->calc_function("func_point02", $this->point02);
+
+			$sub = $this->func_point02 - $this->func_point01;
 			$round01 = round($this->point01 * $this->precision_pow10);
 			$round02 = round($this->point02 * $this->precision_pow10);
+
+			if ($sub == 0) {
+				printf("Error: Division by zero impossible.\n");
+				exit(84);
+			}
+
+			$this->xn = $this->point02 - ($this->func_point02 * ($this->point02 - $this->point01)) / $sub;
+			
+			$this->calc_function("func_xn", $this->xn);
+			printf("x = %." . $this->precision . "f\n", $this->xn);
 
 			if ($round01 == $round02) {
 				if ($this->verbose || $this->disp_func)
@@ -76,20 +90,6 @@ class SecantMethod extends Method {
 				
 				exit(0);
 			}
-
-			$this->calc_function("func_point01", $this->point01);
-			$this->calc_function("func_point02", $this->point02);
-			$sub = $this->func_point02 - $this->func_point01;
-
-			if ($sub == 0) {
-				printf("Error: Division by zero impossible.\n");
-				exit(84);
-			}
-
-			$this->xn = ($this->func_point02 * ($this->point02 - $this->point01)) / $sub;
-			
-			$this->calc_function("func_xn", $this->xn);
-			printf("x = %." . $this->precision . "f\n", $this->xn);
 
 			$this->point01 = $this->point02;
 			$this->point02 = $this->xn;
