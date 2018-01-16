@@ -11,6 +11,7 @@ abstract class Method {
 	public $verbose;
 
 	private function verbose_equation() {
+		printf("Precision is set to %d.\n", $this->precision);
 		printf("Equation settings:\n");
 
 		foreach ($this->equation as $key => $value) {
