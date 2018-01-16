@@ -42,22 +42,28 @@ if ($args == 2 && $argv[1] == "-h") {
 // Check if all arguments is numeric (except the first)
 for ($loop = $start; $loop < (($start == 1 ? 8 : 9)); $loop++) { 
 	if (!is_numeric($argv[$loop])) {
-		printf("One of the arguments isn't a number.\n");
+		printf("One of the arguments isn't a number.\n%d", $loop);
 		exit(84);
 	}
 }
 
 // Get the method to adopt
-$nmet = $argv[1];
+switch ($argv[1]) {
+	case 0:
+		$method = new BisectionMethod($argv);
+		break;
 
-if ($nmet == 1) {
-	$method = new BisectionMethod($argv);
-} else if ($nmet == 2) {
-	$method = new NewtonMethod($argv);
-} else if ($nmet == 3) {
-	$method = new SecantMethod($argv);
-} else {
-	$method = NULL;
+	case 1:
+		$method = new NewtonMethod($argv);
+		break;
+
+	case 2:
+		$method = new SecantMethod($argv);
+		break;
+	
+	default:
+		$method = NULL;
+		break;
 }
 
 // Invalid method used
