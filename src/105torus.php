@@ -10,7 +10,7 @@
 include "src/Methods/BisectionMethod.class.php";
 include "src/Methods/NewtonMethod.class.php";
 include "src/Methods/SecantMethod.class.php";
-include "Utils.class.php";
+include "src/Utils.class.php";
 
 use Methods\BisectionMethod;
 use Methods\NewtonMethod;
