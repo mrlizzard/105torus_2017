@@ -5,23 +5,32 @@ namespace Methods;
 abstract class Method {
 
 	public $equation;
+	public $verbose;
 
-	public function __construct($argv = NULL, $verbose = false) {
-		$this->equation = array();
-		$this->configure($argv);
+	private function verbose_equation() {
+		printf("Equation settings:\n");
+
+		foreach ($this->equation as $key => $value) {
+			printf("  (key, value) => (%s, %d)\n", $key, $value);
+		}
 	}
 
-	public function configure($argv = NULL, $verbose = false) {
-		if ($argv == NULL || !is_bool($verbose))
+	public function configure($argv = NULL) {
+		if ($argv == NULL || !is_bool($this->verbose))
 			exit(84);
 
-		for ($loop = (($verbose == true) ? 3 : 2), $i = 0; $loop < 7; $loop++, $i++)
-			$this->equation[$i] = $argv[$loop];
+		$add = ($this->verbose ? 1 : 0);
+
+		for ($loop = 2 + $add, $i = 0; $loop < 7 + $add; $loop++, $i++)
+			$this->equation['a' . $i] = $argv[$loop];
 
 		if (count($this->equation) != 5) {
-			printf("Error while setting equation array.\n");
+			printf("Error while setting equation array.%d\n", count($this->equation));
 			exit(84);
 		}
+
+		if ($this->verbose)
+			$this->verbose_equation();
 	}
 
 	public abstract function calcul();
