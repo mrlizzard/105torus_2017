@@ -41,9 +41,14 @@ class BisectionMethod extends Method {
 		$this->func_xm = 0;
 		$this->func_x1 = 0;
 
-		for ($i = 0; $i < 250; $i++) { 
-			if (round($this->point01 * $this->precision_pow10) == round($this->point02 * $this->precision_pow10)) {
-				printf("f(x): %.1e", $this->func_xm);
+		for ($i = 0; $i < 250; $i++) {
+			$round01 = round($this->point01 * $this->precision_pow10);
+			$round02 = round($this->point02 * $this->precision_pow10);
+
+			if ($round01 == $round02) {
+				if ($this->verbose)
+					printf("f(x): %.1e\n", $this->func_xm);
+				
 				exit(0);
 			}
 
@@ -52,7 +57,7 @@ class BisectionMethod extends Method {
 			printf("x = %." . $this->precision ."f\n", $this->xm);
 
 			$this->calc_function("func_xm", $this->xm);
-			$this->calc_function("func_x1", $this->x1);
+			$this->calc_function("func_x1", $this->point01);
 
 			if (($this->func_x1 * $this->func_xm) < 0) {
 				$this->point02 = $this->xm;
