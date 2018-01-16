@@ -21,11 +21,11 @@ class NewtonMethod extends Method {
 	}
 
 	public function calcul() {
-		$this->pt = 0.5;
+		$this->point = 0.5;
 
 		if ($this->verbose) {
 			printf("Using newton's method.\n");
-			printf("Initial point => %d.\n", $this->point);
+			printf("Initial point => %.1f\n", $this->point);
 		}
 	}
 

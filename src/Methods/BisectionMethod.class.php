@@ -27,8 +27,8 @@ class BisectionMethod extends Method {
 
 		if ($this->verbose) {
 			printf("Using bisection method.\n");
-			printf("Initial point 01 => %d.\n", $this->point01);
-			printf("Initial point 02 => %d.\n", $this->point02);
+			printf("Initial point 01 => %d\n", $this->point01);
+			printf("Initial point 02 => %d\n", $this->point02);
 		}
 	}
 
