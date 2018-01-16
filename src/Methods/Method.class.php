@@ -2,7 +2,7 @@
 
 namespace Methods;
 
-class Method {
+abstract class Method {
 
 	public $equation;
 
@@ -23,5 +23,7 @@ class Method {
 			exit(84);
 		}
 	}
+
+	public abstract function calcul();
 
 }

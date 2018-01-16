@@ -12,4 +12,8 @@ class NewtonMethod extends Method {
 		$this->configure($argv);
 	}
 
+	public function calcul() {
+		
+	}
+
 }

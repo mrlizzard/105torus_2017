@@ -12,4 +12,8 @@ class SecantMethod extends Method {
 		$this->configure($argv);
 	}
 
+	public function calcul() {
+		
+	}
+
 }

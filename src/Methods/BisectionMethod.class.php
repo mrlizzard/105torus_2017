@@ -12,4 +12,8 @@ class BisectionMethod extends Method {
 		$this->configure($argv);
 	}
 
+	public function calcul() {
+		
+	}
+
 }
