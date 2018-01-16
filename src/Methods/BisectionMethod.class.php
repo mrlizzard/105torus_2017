@@ -13,7 +13,7 @@ class BisectionMethod extends Method {
 	}
 
 	public function calcul() {
-
+		
 	}
 
 	public function display() {
