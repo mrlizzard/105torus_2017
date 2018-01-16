@@ -73,6 +73,9 @@ class NewtonMethod extends Method {
 			$this->point02 = $this->point01 - ($this->func_xn / $this->func_pxn);
 			$round01 = round($this->point01 * $this->precision_pow10);
 			$round02 = round($this->point02 * $this->precision_pow10);
+			
+			$this->calc_function("func_xn2", $this->point02, false);
+			printf("x = %." . $this->precision . "f\n", $this->point01);
 
 			if ($round01 == $round02) {
 				if ($this->verbose)
@@ -81,10 +84,7 @@ class NewtonMethod extends Method {
 				exit(0);
 			}
 
-			$this->calc_function("func_xn2", $this->point02, false);
 			$this->point01 = $this->point02;
-
-			printf("x = %." . $this->precision . "f\n", $this->point02);
 		}
 	}
 
