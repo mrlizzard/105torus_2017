@@ -21,6 +21,11 @@ class Utils {
 	public $start;
 	public $disp_func;
 
+	/**
+	 ** Class constructor.
+	 **
+	 ** @param (void)
+	 **/
 	public function __construct() {
 		$this->verbose = false;
 		$this->start = 1;
@@ -72,6 +77,13 @@ class Utils {
 		}
 	}
 
+	/**
+	 ** Public check_arguments function.
+	 ** Check if all the arguments is correct.
+	 ** Only equation numbers is checked, flags and method is check after.
+	 **
+	 ** @param (array) $argv
+	 **/
 	public function check_arguments($argv) {
 		for ($loop = $this->start; $loop < (($this->start == 1 ? 8 : 9)); $loop++) { 
 			if (!is_numeric($argv[$loop])) {
@@ -81,6 +93,14 @@ class Utils {
 		}
 	}
 
+	/**
+	 ** Public select_method function.
+	 ** Select the method who want to use.
+	 ** Must be between 1 and 3 (included).
+	 **
+	 ** @param (array) $argv
+	 ** @return (Method) $method
+	 **/
 	public function select_method($argv) {
 		$nmet = $argv[$this->start];
 
