@@ -12,6 +12,8 @@ use Methods\Method;
  **/
 class NewtonMethod extends Method {
 
+	private $point;
+
 	public function __construct($argv = NULL, $verbose) {
 		$this->verbose = $verbose;
 
@@ -19,7 +21,12 @@ class NewtonMethod extends Method {
 	}
 
 	public function calcul() {
+		$this->pt = 0.5;
 
+		if ($this->verbose) {
+			printf("Using newton's method.\n");
+			printf("Initial point => %d.\n", $this->point);
+		}
 	}
 
 	public function display() {
