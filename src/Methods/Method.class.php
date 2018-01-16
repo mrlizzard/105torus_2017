@@ -2,6 +2,13 @@
 
 namespace Methods;
 
+/**
+ ** NewtonMethod abstract class
+ **
+ ** @author Cyril COLINET
+ ** @version 1.0
+ ** @since 1.0
+ **/
 abstract class Method {
 
 	public $precision;
@@ -10,7 +17,13 @@ abstract class Method {
 	public $equation;
 	public $verbose;
 
-	private function verbose_equation() {
+	/**
+	 ** Private verbose function.
+	 ** Print settings when verbose mode is active.
+	 **
+	 ** @param (void)
+	 **/
+	private function verbose() {
 		printf("Precision is set to %d.\n", $this->precision);
 		printf("Equation settings:\n");
 
@@ -19,6 +32,12 @@ abstract class Method {
 		}
 	}
 
+	/**
+	 ** Public configure function.
+	 ** Configure class with variables name, and set equation
+	 **
+	 ** @param (array) $argv, default = NULL
+	 **/
 	public function configure($argv = NULL) {
 		if ($argv == NULL || !is_bool($this->verbose))
 			exit(84);
@@ -36,11 +55,24 @@ abstract class Method {
 		}
 
 		if ($this->verbose)
-			$this->verbose_equation();
+			$this->verbose();
 	}
 
+	/**
+	 ** Public calcul function.
+	 ** Settings class with the default variables values
+	 **
+	 ** @param (void)
+	 **/
 	public abstract function calcul();
 
+	/**
+	 ** Public display function.
+	 ** Display the result and print the final function only
+	 ** if the verbose mode is active.
+	 **
+	 ** @param (void)
+	 **/
 	public abstract function display();
 
 }
