@@ -1,5 +1,13 @@
 <?php 
 
+require_once "src/Methods/BisectionMethod.class.php";
+require_once "src/Methods/NewtonMethod.class.php";
+require_once "src/Methods/SecantMethod.class.php";
+
+use Methods\BisectionMethod;
+use Methods\NewtonMethod;
+use Methods\SecantMethod;
+
 /**
  ** Utils class
  **
@@ -8,6 +16,16 @@
  ** @since 1.0
  **/
 class Utils {
+
+	public $verbose;
+	public $start;
+	public $disp_func;
+
+	public function __construct() {
+		$this->verbose = false;
+		$this->start = 1;
+		$this->disp_func = false;
+	}
 
 	/**
 	 ** Public check_help function.
@@ -42,16 +60,46 @@ class Utils {
 		$args = count($argv);
 
 		if ($args == 9 && ($argv[1] == "-v" || $argv[1] == "--verbose")) {
-			$start++;
-			$verbose = true;
+			$this->start++;
+			$this->verbose = true;
 			printf("Verbose mode actived.\n");
 		} else if ($args == 9 && ($argv[1] == "-f" || $argv[1] == "--func")) {
-			$start++;
-			$disp_func = true;
+			$this->start++;
+			$this->disp_func = true;
 		} else if ($args != 8) {
 			printf("Too much/less arguments. Only 7 (or 8) arguments needed.\n");
 			exit(84);
 		}
+	}
+
+	public function check_arguments($argv) {
+		for ($loop = $this->start; $loop < (($this->start == 1 ? 8 : 9)); $loop++) { 
+			if (!is_numeric($argv[$loop])) {
+				printf("One of the arguments isn't a number.\n");
+				exit(84);
+			}
+		}
+	}
+
+	public function select_method($argv) {
+		$nmet = $argv[$this->start];
+
+		if ($nmet == 1) {
+			$method = new BisectionMethod($argv, $this->verbose, $this->disp_func);
+		} else if ($nmet == 2) {
+			$method = new NewtonMethod($argv, $this->verbose, $this->disp_func);
+		} else if ($nmet == 3) {
+			$method = new SecantMethod($argv, $this->verbose, $this->disp_func);
+		} else {
+			$method = NULL;
+		}
+
+		if ($method == NULL) {
+			printf("Method must be between 0 and 2 (included)\n");
+			exit(84);
+		}
+
+		return ($method);
 	}
 
 }
