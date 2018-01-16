@@ -10,39 +10,21 @@
 include "src/Methods/BisectionMethod.class.php";
 include "src/Methods/NewtonMethod.class.php";
 include "src/Methods/SecantMethod.class.php";
+include "Utils.class.php";
 
 use Methods\BisectionMethod;
 use Methods\NewtonMethod;
 use Methods\SecantMethod;
 
+$utils = new Utils();
 $method = NULL;
-$args = count($argv);
 $start = 1;
 $verbose = false;
 $disp_func = false;
 
 // Check help flag and arguments number
-if ($args == 2 && $argv[1] == "-h") {
-	printf("USAGE:\n\t./105torus [-v,--verbose,-f,--func] opt a0 a1 a2 a3 a4 n\n\n");
-	printf("DESCRIPTION:\n");
-	printf("\t-v, --verbose\tVerbose mode (debug)\n");
-	printf("\t-f, --func\tDisplay function at the end of iterations\n");
-	printf("\topt\t\tMethod number (0: bisection, 1: newton, 2: secant)\n");
-	printf("\ta(i)\t\tCoefficients of the equation\n");
-	printf("\tn\t\tPrecision (meaning the application of the polynomial\n");
-	printf("\t\t\tto the solution should be smaller than 10^-n)\n");
-	exit(0);
-} else if ($args == 9 && ($argv[1] == "-v" || $argv[1] == "--verbose")) {
-	$start++;
-	$verbose = true;
-	printf("Verbose mode actived.\n");
-} else if ($args == 9 && ($argv[1] == "-f" || $argv[1] == "--func")) {
-	$start++;
-	$disp_func = true;
-} else if ($args != 8) {
-	printf("Too much/less arguments. Only 7 (or 8) arguments needed.\n");
-	exit(84);
-}
+$utils->check_help($argv);
+$utils->check_flags($argv);
 
 // Check if all arguments is numeric (except the first)
 for ($loop = $start; $loop < (($start == 1 ? 8 : 9)); $loop++) { 
