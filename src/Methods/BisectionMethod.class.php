@@ -43,6 +43,9 @@ class BisectionMethod extends Method {
 	public function calcul() {
 		$this->point01 = 0;
 		$this->point02 = 1;
+		$this->xm = 0;
+		$this->func_xm = 0;
+		$this->func_x1 = 0;
 
 		if ($this->verbose) {
 			printf("Using bisection method.\n");
@@ -59,10 +62,6 @@ class BisectionMethod extends Method {
 	 ** @param (void)
 	 **/
 	public function display() {
-		$this->xm = 0;
-		$this->func_xm = 0;
-		$this->func_x1 = 0;
-
 		for ($i = 0; $i < 250; $i++) {
 			$this->xm = ($this->point01 + $this->point02) / 2;
 			$this->calc_function("func_xm", $this->xm);

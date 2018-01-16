@@ -17,6 +17,11 @@ class NewtonMethod extends Method {
 
 	private $point;
 
+	private $xn2;
+	private $func_xn;
+	private $func_xn2;
+	private $func_pxn;
+
 	/**
 	 ** Class constructor.
 	 **
