@@ -3,6 +3,8 @@ group: stable
 os: linux
 script:
   - make re
-  - ./105torus 0 0 0 0 0 0 0
+  - ./105torus 1 0 0 0 0 0 0
+  - ./105torus 2 0 0 0 0 0 0
+  - ./105torus 3 0 0 0 0 0 0
 notifications:
   email: false
