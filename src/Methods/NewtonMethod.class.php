@@ -97,6 +97,7 @@ class NewtonMethod extends Method {
 	 **
 	 ** @param (String) $func, default = NULL
 	 ** @param (double) $coef
+	 ** @param (boolean) $prob
 	 **/
 	private function calc_function($func = NULL, $coef, $prob) {
 		if (is_null($func) || $func == "" || !is_numeric($coef) || !is_bool($prob))
