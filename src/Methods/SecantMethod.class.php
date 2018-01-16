@@ -8,8 +8,8 @@ use Methods\Method;
 
 class SecantMethod extends Method {
 
-	public function __construct($argv = NULL) {
-		$this->configure($argv);
+	public function __construct($argv = NULL, $verbose) {
+		$this->configure($argv, $verbose);
 	}
 
 	public function calcul() {

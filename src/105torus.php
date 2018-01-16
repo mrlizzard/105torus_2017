@@ -48,14 +48,14 @@ for ($loop = $start; $loop < (($start == 1 ? 8 : 9)); $loop++) {
 }
 
 // Get the method to adopt
-$nmet = $argv[1];
+$nmet = $argv[$start];
 
 if ($nmet == 1) {
-	$method = new BisectionMethod($argv);
+	$method = new BisectionMethod($argv, $verbose);
 } else if ($nmet == 2) {
-	$method = new NewtonMethod($argv);
+	$method = new NewtonMethod($argv, $verbose);
 } else if ($nmet == 3) {
-	$method = new SecantMethod($argv);
+	$method = new SecantMethod($argv, $verbose);
 } else {
 	$method = NULL;
 }
