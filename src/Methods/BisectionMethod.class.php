@@ -49,11 +49,7 @@ class BisectionMethod extends Method {
 
 			$this->xm = ($this->point01 + $this->point02) / 2;
 
-			if ($i <= 20) {
-				printf("x = %f\n", $this->xm);
-			} else {
-				printf("x = %.20f\n", $this->xm);
-			}
+			printf("x = %." . $this->precision ."f\n", $this->xm);
 
 			$this->calc_function("func_xm", $this->xm);
 			$this->calc_function("func_x1", $this->x1);
