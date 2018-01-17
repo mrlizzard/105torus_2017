@@ -22,4 +22,5 @@ $method = $utils->select_method($argv);
 $method->calcul();
 $method->display();
 
-exit(0);
+printf("Iteration number too high.");
+exit(84);
