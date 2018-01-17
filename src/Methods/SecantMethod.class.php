@@ -82,7 +82,7 @@ class SecantMethod extends Method {
 			$this->xn = $this->point02 - ($this->func_point02 * ($this->point02 - $this->point01)) / $sub;
 			
 			$this->calc_function("func_xn", $this->xn);
-			printf("x = %." . $this->precision . "f\n", $this->xn);
+			printf("x = %s\n", $this->float_formating($this->xn));
 
 			if ($round01 == $round02) {
 				if ($this->verbose || $this->disp_func)

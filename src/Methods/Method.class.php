@@ -60,6 +60,34 @@ abstract class Method {
 	}
 
 	/**
+	 ** Public float_formatting function.
+	 ** Format float like neo marvin tests.
+	 **
+	 ** @param (float) $var, default = NULL
+	 ** @return (String) $str (formated float as string)
+	 **/
+	public function float_formating($var = NULL) {
+		if (is_null($var))
+			exit(84);
+
+		try {
+			$str = ((String) $var);
+			$arr = explode(".", $str);
+
+			if (strlen($arr[1]) > $this->precision) {
+				$str = sprintf("%." . $this->precision . "f", $str);
+			} else {
+				$str = sprintf("%s", $str);
+			}
+
+			return ($str);
+		} catch(\Exception $err) {
+			printf("Error during float formatting: %s\n", $err->getMessage());
+			exit(84);
+		}
+	}
+
+	/**
 	 ** Public calcul function.
 	 ** Settings class with the default variables values
 	 **
