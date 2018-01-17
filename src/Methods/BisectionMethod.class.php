@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace Methods;
 
@@ -85,7 +85,28 @@ class BisectionMethod extends Method {
 				exit(0);
 			}
 
-			printf("x = %." . $this->precision ."f\n", $this->xm);
+			printf("x = %s\n", $this->float_formating("xm"));
+		}
+	}
+
+	private function float_formating($var = NULL) {
+		if (is_null($var))
+			exit(84);
+
+		try {
+			$str = ((String) $this->$var);
+			$arr = explode(".", $str);
+
+			if (strlen($arr[1]) > $this->precision) {
+				$str = sprintf("%." . $this->precision . "f", $str);
+			} else {
+				$str = sprintf("%s", $str);
+			}
+
+			return ($str);
+		} catch(\Exception $err) {
+			printf("Error during float formatting: %s\n", $err->getMessage());
+			exit(84);
 		}
 	}
 
