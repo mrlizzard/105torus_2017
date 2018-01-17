@@ -64,7 +64,7 @@ class NewtonMethod extends Method {
 	 **/
 	public function display() {
 		for ($i = 0; $i < 250; $i++) {
-			$this->calc_function("func_xn", $this->point01, false);
+			$this->calc_function("func_xn", $this->point01);
 			$this->calc_function("func_pxn", $this->point01, true);
 
 			if ($this->func_pxn == 0) {
@@ -76,7 +76,7 @@ class NewtonMethod extends Method {
 			$round01 = round($this->point01 * $this->precision_pow10);
 			$round02 = round($this->point02 * $this->precision_pow10);
 
-			$this->calc_function("func_xn2", $this->point02, false);
+			$this->calc_function("func_xn2", $this->point02);
 			printf("x = %s\n", $this->float_formating($this->point01));
 
 			if ($round01 == $round02) {
@@ -91,7 +91,7 @@ class NewtonMethod extends Method {
 	}
 
 	/**
-	 ** Private calc_function function.
+	 ** Public calc_function function.
 	 ** Calculus the function passed ad parameter and set it
 	 ** into class variable.
 	 **
@@ -99,7 +99,7 @@ class NewtonMethod extends Method {
 	 ** @param (double) $coef
 	 ** @param (boolean) $prob
 	 **/
-	private function calc_function($func = NULL, $coef, $prob) {
+	public function calc_function($func = NULL, $coef, $prob = false) {
 		if (is_null($func) || $func == "" || !is_numeric($coef) || !is_bool($prob))
 			exit(84);
 

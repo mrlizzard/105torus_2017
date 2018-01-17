@@ -104,4 +104,15 @@ abstract class Method {
 	 **/
 	public abstract function display();
 
+	/**
+	 ** Private calc_function function.
+	 ** Calculus the function passed ad parameter and set it
+	 ** into class variable.
+	 **
+	 ** @param (String) $func, default = NULL
+	 ** @param (double) $coef
+	 ** @param (boolean) $prob
+	 **/
+	public abstract function calc_function($func = NULL, $coef, $prob = false);
+
 }

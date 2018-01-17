@@ -97,15 +97,16 @@ class SecantMethod extends Method {
 	}
 
 	/**
-	 ** Private calc_function function.
+	 ** Public calc_function function.
 	 ** Calculus the function passed ad parameter and set it
 	 ** into class variable.
 	 **
 	 ** @param (String) $func, default = NULL
 	 ** @param (double) $coef
+	 ** @param (boolean) $prob
 	 **/
-	private function calc_function($func = NULL, $coef) {
-		if (is_null($func) || $func == "" || !is_numeric($coef))
+	public function calc_function($func = NULL, $coef, $prob = false) {
+		if (is_null($func) || $func == "" || !is_numeric($coef) || !is_bool($prob))
 			exit(84);
 
 		if ($func != "func_point01" && $func != "func_point02" && $func != "func_xn") {
