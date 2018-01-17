@@ -2,13 +2,7 @@
 
 EXIT=0;
 
-function print_diff() {
-	for LINE in $1; do
-		echo "  ${LINE}";
-	done
-}
-
-make re;
+GN=$(make re);
 mkdir tests/run;
 
 ## Bisection test
