@@ -75,7 +75,7 @@ abstract class Method {
 			$arr = explode(".", $str);
 
 			if (strlen($arr[1]) > $this->precision) {
-				$str = sprintf("%s", substr($str, 0, $this->precision));
+				$str = sprintf("%." . $this->precision . "f", $var);
 			} else {
 				$str = sprintf("%s", $str);
 			}
