@@ -41,7 +41,7 @@ if [[ "$RET" != "" ]]; then
 	cat tests/run/print;
 	EXIT=84;
 else
-	echo -e "[OK] Secant test passed. Next.";
+	echo -e "[OK] Secant test passed. All tests passed.";
 fi
 
 ## Remove test files
