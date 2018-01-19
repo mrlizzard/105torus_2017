@@ -115,7 +115,7 @@ class Utils {
 		}
 
 		if ($method == NULL) {
-			printf("Method must be between 0 and 2 (included)\n");
+			printf("Method must be between 1 and 3(included)\n");
 			exit(84);
 		}
 
