@@ -2,9 +2,7 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use PHPUnit\Framework\TestCase;
-
-class MethodsTest extends TestCase {
+class MethodsTest extends PHPUnit_Framework_TestCase {
 
     public function testBisectionMethod() {
     	$exit = 0;
