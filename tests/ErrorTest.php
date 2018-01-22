@@ -12,7 +12,7 @@ class ErrorTest extends TestCase {
 		exec("./105torus", $got, $exit);
 
 		$this->assertEquals($exit, "84");
-		$this->assertEquals($got[0], "Too much/less arguments. Only 7 (or 8) arguments needed.\n");
+		$this->assertEquals($got[0], "Too much/less arguments. Only 7 (or 8) arguments needed.");
 	}
 
 	public function testTooMuchArgument() {
@@ -22,7 +22,7 @@ class ErrorTest extends TestCase {
 		exec("./105torus 3 5 6 7 8 9 0 6 1", $got, $exit);
 
 		$this->assertEquals($exit, "84");
-		$this->assertEquals($got[0], "Too much/less arguments. Only 7 (or 8) arguments needed.\n");
+		$this->assertEquals($got[0], "Too much/less arguments. Only 7 (or 8) arguments needed.");
 	}
 
 }

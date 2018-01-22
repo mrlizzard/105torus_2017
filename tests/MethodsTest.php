@@ -48,7 +48,7 @@ class MethodsTest extends TestCase {
 			"x = 0.522740003526"
     	);
 
-    	exec("./105torus 2 -1 0 6 -5 1 12");
+    	exec("./105torus 2 -1 0 6 -5 1 12", $got, $exit);
 
     	$this->assertEquals($exit, "0");
     	$this->assertEquals($got, $expected);
