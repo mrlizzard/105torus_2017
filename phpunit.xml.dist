@@ -12,10 +12,7 @@
 
     <filter>
   		<whitelist processUncoveredFilesFromWhitelist="true">
-  			<directory suffix="*.php">./src/</directory>
-  			<directory suffix="*.php">./src/Methods/</directory>
-    		<directory suffix="MethodsTest.php">./tests/</directory>
-    		<directory suffix="ErrorTest.php">./tests/</directory>
+  			<directory suffix=".php">./src/</directory>
   		</whitelist>
 	</filter>
 </phpunit>
