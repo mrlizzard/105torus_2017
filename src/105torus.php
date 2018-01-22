@@ -1,4 +1,3 @@
-#!/usr/bin/env php
 <?php
 /*
 ** EPITECH PROJECT, 2018

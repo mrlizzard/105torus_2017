@@ -3,7 +3,8 @@
 BIN_NAME		=	105torus
 
 all:
-	cat src/$(BIN_NAME).php > $(BIN_NAME)
+	echo "#!/usr/bin/env php" > $(BIN_NAME)
+	cat src/$(BIN_NAME).php >> $(BIN_NAME)
 	chmod 711 $(BIN_NAME)
 
 re: fclean all
