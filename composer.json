@@ -2,13 +2,16 @@
     "name": "cyril.colinet/105torus_2017",
     "description": "Tore epitech maths project. Continuation of the 101pong, and should allow to draw more complex forms, such as tores (2th and 4th degree equation (in the case of tore))",
     "type": "project",
-    "require": {
-        "phpunit/phpunit": "^6.5"
-    },
     "authors": [
         {
             "name": "Cyril COLINET",
             "email": "cyril.colinet@epitech.eu"
         }
-    ]
+    ],
+    "require": {
+        "php": ">=5.0.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0"
+    }
 }
