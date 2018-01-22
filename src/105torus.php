@@ -13,6 +13,7 @@ require_once "src/Utils.class.php";
 if (!isset($argv)) {
 	$argv = array(
 		"./105torus",
+		"--verbose",
 		rand(1, 3),
 		rand(-10, 15),
 		rand(-10, 15),
