@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<phpunit bootstrap="vendor/autoload.php">
+<phpunit bootstrap="vendor/autoload.php" colors="true" convertErrorsToExceptions="true" convertNoticesToExceptions="true" convertWarningsToExceptions="true" stopOnFailure="false" forceCoversAnnotation="true">
     <testsuites>
         <testsuite name="Methods">
             <file>./tests/MethodsTest.php</file>
@@ -9,4 +9,11 @@
             <file>./tests/ErrorTest.php</file>
         </testsuite>
     </testsuites>
+
+    <filter>
+  		<whitelist processUncoveredFilesFromWhitelist="true">
+    		<directory suffix="MethodsTest.php">./tests/</directory>
+    		<directory suffix="ErrorTest.php">./tests/</directory>
+  		</whitelist>
+	</filter>
 </phpunit>
