@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class MethodsTest extends TestCase {
 
-	public function testLessArgument() {
+	public function testTooLessArgument() {
 		$exit = 0;
 
 		exec("./105torus", $got, $exit);
@@ -15,7 +15,7 @@ class MethodsTest extends TestCase {
 		$this->assertEquals($got[0], "Too much/less arguments. Only 7 (or 8) arguments needed.\n");
 	}
 
-	public function testLessArgument() {
+	public function testTooMuchArgument() {
 		$exit = 0;
 		$got = array();
 
