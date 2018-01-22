@@ -4,9 +4,9 @@ require __DIR__ . '/../vendor/autoload.php';
 
 use PHPUnit\Framework\TestCase;
 
-class Test extends TestCase {
+class MethodsTest extends TestCase {
 
-    public function bisecetion_test() {
+    public function testBisectionMethod() {
     	$exit = 0;
     	$got = array();
     	$expected = array(
