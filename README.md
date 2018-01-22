@@ -1,4 +1,7 @@
-# Torus (4th degree) - Mathematics of the donut [![Build Status](https://travis-ci.org/mrlizzard/105torus_2017.svg?branch=master)](https://travis-ci.org/mrlizzard/105torus_2017)
+# Torus (4th degree) - Mathematics of the donut 
+
+[![Build Status](https://travis-ci.org/mrlizzard/105torus_2017.svg?branch=master)](https://travis-ci.org/mrlizzard/105torus_2017)
+[![codecov](https://codecov.io/gh/mrlizzard/105torus_2017/branch/master/graph/badge.svg)](https://codecov.io/gh/mrlizzard/105torus_2017)
 
 - **Binary name:** 105torus
 - **Repository name:** 105torus_2017
