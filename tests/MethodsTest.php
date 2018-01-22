@@ -38,4 +38,20 @@ class MethodsTest extends TestCase {
     	$this->assertEquals($got, $expected);
     }
 
+    public function testNewtonMethod() {
+    	$exit = 0;
+    	$got = array();
+    	$expected = array(
+			"x = 0.5",
+			"x = 0.522727272727",
+			"x = 0.522740003514",
+			"x = 0.522740003526"
+    	);
+
+    	exec("./105torus 2 -1 0 6 -5 1 12");
+
+    	$this->assertEquals($exit, "0");
+    	$this->assertEquals($got, $expected);
+    }
+
 }
