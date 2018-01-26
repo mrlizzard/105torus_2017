@@ -2,7 +2,9 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-class ErrorTest extends PHPUnit_Framework_TestCase {
+use PHPUnit\Framework\TestCase;
+
+class ErrorTest extends TestCase {
 
 	public function testTooLessArgument() {
 		$exit = 0;
